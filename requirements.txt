@@ -1,0 +1,7 @@
+matplotlib==3.4.1
+numpy==1.20.2
+opencv-python==4.5.1
+tensorboard==2.5.0
+torch==1.8.1
+tqdm==4.60.0
+torchvision==0.9.1
