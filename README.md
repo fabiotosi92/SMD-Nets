@@ -127,35 +127,35 @@ You can download pre-trained models on our UnrealStereo4K dataset from the follo
 **Disparity Visualization.** Some qualitative results of the proposed SMD-Nets using PSMNet as stereo backbone. From left to right, the input image from the UnrealStereo4K test set, the predicted disparity and the corresponding error map. Please zoom-in to better perceive details near depth boundaries.
 
 <p float="left">
-  <img src="./images/img.jpg" width="290" />
-  <img src="./images/pred.jpg" width="290" /> 
-  <img src="./images/error.jpg" width="290" />
+  <img src="./images/img.jpg" width="260" />
+  <img src="./images/pred.jpg" width="260" /> 
+  <img src="./images/error.jpg" width="260" />
 </p>
 <p float="left">
-  <img src="./images/img1.jpg" width="290" />
-  <img src="./images/pred1.jpg" width="290" /> 
-  <img src="./images/error1.jpg" width="290" />
+  <img src="./images/img1.jpg" width="260" />
+  <img src="./images/pred1.jpg" width="260" /> 
+  <img src="./images/error1.jpg" width="260" />
 </p>
 <p float="left">
-  <img src="./images/img2.jpg" width="290" />
-  <img src="./images/pred2.jpg" width="290" /> 
-  <img src="./images/error2.jpg" width="290" />
+  <img src="./images/img2.jpg" width="260" />
+  <img src="./images/pred2.jpg" width="260" /> 
+  <img src="./images/error2.jpg" width="260" />
 </p> 
 
 **Point Cloud Visualization.** Below, instead, we show point cloud visualizations on UnrealStereo4K for both the passive binocular stereo and the active depth datasets, adopting HSMNet as backbone. From left to right, the reference image, the results obtained using a standard disparity regression (i.e., disparity point estimate), a unimodal Laplacian distribution and our bimodal Laplacian mixture distribution. Note that our bimodal representation  notably  alleviates  bleeding  artifacts near object boundaries compared to both disparity regression and the unimodal formulation.
 
 <p float="left">
-  <img src="./images/img4.jpg" width="220" />
-  <img src="./images/pcl_hsm_l1_passive.jpg" width="220" />
-  <img src="./images/pcl_hsm_unimodal_passive.jpg" width="220" /> 
-  <img src="./images/pcl_hsm_ours_passive.jpg" width="220" />
+  <img src="./images/img4.jpg" width="190" />
+  <img src="./images/pcl_hsm_l1_passive.jpg" width="190" />
+  <img src="./images/pcl_hsm_unimodal_passive.jpg" width="190" /> 
+  <img src="./images/pcl_hsm_ours_passive.jpg" width="190" />
 </p>
 
 <p float="left">
-  <img src="./images/img3.jpg" width="250" />
-  <img src="./images/pcl_hsm_l1_active.jpg" width="210" />
-  <img src="./images/pcl_hsm_unimodal_active.jpg" width="210" /> 
-  <img src="./images/pcl_hsm_ours_active.jpg" width="210" />
+  <img src="./images/img3.jpg" width="210" />
+  <img src="./images/pcl_hsm_l1_active.jpg" width="177" />
+  <img src="./images/pcl_hsm_unimodal_active.jpg" width="177" /> 
+  <img src="./images/pcl_hsm_ours_active.jpg" width="177" />
 </p>
 
 ## Contacts
