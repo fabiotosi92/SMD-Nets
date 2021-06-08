@@ -15,7 +15,7 @@ This repository contains a Pytorch implementation of "SMD-Nets: Stereo Mixture D
 
 For more details, please check:
 
-[[Paper]](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   [[Supplementary]](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)  [[Poster]](www.cvlibs.net/publications/Tosi2021CVPR_poster.pdf) [[Video]](https://www.youtube.com/watch?v=tvVGuUSe2n8&t=148s)   [[Blog]](https://autonomousvision.github.io/smdnets/)   
+[[Paper]](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   [[Supplementary]](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)  [[Poster]](http://www.cvlibs.net/publications/Tosi2021CVPR_poster.pdf) [[Video]](https://www.youtube.com/watch?v=tvVGuUSe2n8&t=148s)   [[Blog]](https://autonomousvision.github.io/smdnets/)   
 
 If you find this code useful in your research, please cite:
 
