@@ -15,8 +15,7 @@ This repository contains a Pytorch implementation of "SMD-Nets: Stereo Mixture D
 
 For more details, please check:
 
-[Paper](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   
-[Supplementary material](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)   
+[[Paper]](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   [[Supplementary]](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)  [[Poster]](www.cvlibs.net/publications/Tosi2021CVPR_poster.pdf) [[Video]](https://www.youtube.com/watch?v=tvVGuUSe2n8&t=148s)   [[Blog]](https://autonomousvision.github.io/smdnets/)   
 
 If you find this code useful in your research, please cite:
 
@@ -40,12 +39,22 @@ pip install -r requirements
 We create our synthetic dataset, UnrealStereo4K, using the popular game engine [Unreal Engine](https://www.unrealengine.com/en-US/) combined with the open-source plugin [UnrealCV](https://unrealcv.org/).
 
 ### UnrealStereo4K 
-Our photo-realistic synthetic passive binocular UnrealStereo4K dataset consists of images of 8 scenes, including indoor and outdoor environments. We rendered stereo pairs at 3840×2160 resolution for each scene with pixel-accurate ground truth (aligned with both the left and the right images!). 
-For the active monocular UnrealStereo4K dataset, instead, we render 4 scenes using the intrinsic matrix of the IR camera on our structured light sensor. We then warp the reference dot pattern to each image to simulate the IR camera.
+Our photo-realistic synthetic passive binocular UnrealStereo4K dataset consists of images of 8 static scenes, including indoor and outdoor environments. We rendered stereo pairs at **3840×2160** resolution for each scene with pixel-accurate **ground truth disparity maps** (aligned with both the left and the right images!) and **ground truth poses**. 
 
-You can download our synthetic binocular stereo dataset using the ```download_data.sh``` script in the ```scripts``` folder.  
+You can automatically download the entire synthetic binocular stereo dataset using the ```download_data.sh``` script in the ```scripts``` folder. In alternative, you can download each scene individually:
 
-**Warning!**: All the RGB images are PNG files at 8 MPx. This notably slows down the training process due to the expensive dataloading operation. Thus, we suggest compressing the images to raw binary files to speed up the process and trainings (<u>Pay attention to edit the filenames accordingly</u>). You can use the following code to **offline** convert the stereo images to a ```raw``` format:
+[UnrealStereo4K_00000.zip [74 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00000.zip)<br>
+[UnrealStereo4K_00001.zip [73 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00001.zip)<br>
+[UnrealStereo4K_00002.zip [74 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00002.zip)<br>
+[UnrealStereo4K_00003.zip [73 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00003.zip)<br>
+[UnrealStereo4K_00004.zip [72 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00004.zip)<br>
+[UnrealStereo4K_00005.zip [74 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00005.zip)<br>
+[UnrealStereo4K_00006.zip [67 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00006.zip)<br>
+[UnrealStereo4K_00007.zip [76 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00007.zip)<br>
+[UnrealStereo4K_00008.zip [16 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00008.zip) - It contains 200 stereo pairs only, used as out-of-domain test set
+
+
+**Warning!**: All the RGB images are PNG files at 8 MPx. This notably slows down the training process due to the expensive dataloading operation. Thus, we suggest compressing the images to raw binary files to speed up the process and trainings (<u>Pay attention to edit the filenames accordingly</u>). You can use the following code to convert (**offline**) the stereo images (Image0 and Image1 folders) to a ```raw``` format:
 
 ```shell
 img_path=/path/to/the/image
@@ -56,12 +65,6 @@ img.tofile(out)
 out.close()
 ```
 
-<!---
-### RealActive4K
-Our real-world active dataset consists of 2570 images of an indoor room captured with a Kinect-like structured light sensor at 4112×3008 resolution. To  obtain  pseudo-ground truth as co-supervision during training, we perform BlockMatching with left-right consistency check.
-
-<u>***The dataset will be publicly available soon!***</u>
--->
 
 ## Training
 
@@ -119,7 +122,7 @@ python apps/test.py --dataroot $dataroot \
 <u>**Stereo Ultra High-Resolution**</u>: if you want to estimate a disparity map at arbitrary spatial resolution given a low resolution stereo pair at testing time, just use a different value for the ```superres_factor``` parameter (e.g. 2,4,8..32!). Below, a comparison of our model using the PSMNet backbone at 128Mpx resolution (top) and the original PSMNet at 0.5Mpx resolution (bottom), both taking stereo pairs at 0.5Mpx resolution as input. 
 
 <p align="center">
-  <img src="./images/super_resolution.jpg" width="700"   />
+  <img src="./images/super_resolution.jpg" width="800"   />
 </p>
 
 
