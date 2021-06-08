@@ -43,13 +43,25 @@ We create our synthetic dataset, UnrealStereo4K, using the popular game engine [
 Our photo-realistic synthetic passive binocular UnrealStereo4K dataset consists of images of 8 scenes, including indoor and outdoor environments. We rendered stereo pairs at 3840×2160 resolution for each scene with pixel-accurate ground truth (aligned with both the left and the right images!). 
 For the active monocular UnrealStereo4K dataset, instead, we render 4 scenes using the intrinsic matrix of the IR camera on our structured light sensor. We then warp the reference dot pattern to each image to simulate the IR camera.
 
-<u>***Both datasets will be publicly available soon!***</u>
+You can download our synthetic binocular stereo dataset using the ```download_data.sh``` script in the ```scripts``` folder.  
 
+**Warning!**: All the RGB images are PNG files at 8 MPx. This notably slows down the training process due to the expensive dataloading operation. Thus, we suggest compressing the images to raw binary files to speed up the process and trainings (<u>Pay attention to edit the filenames accordingly</u>). You can use the following code to **offline** convert the stereo images to a ```raw``` format:
+
+```shell
+img_path=/path/to/the/image
+out = open(img_path.replace("png", "raw"), 'wb') 
+img = cv2.imread(img_path, -1)
+img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
+img.tofile(out)
+out.close()
+```
+
+<!---
 ### RealActive4K
 Our real-world active dataset consists of 2570 images of an indoor room captured with a Kinect-like structured light sensor at 4112×3008 resolution. To  obtain  pseudo-ground truth as co-supervision during training, we perform BlockMatching with left-right consistency check.
 
 <u>***The dataset will be publicly available soon!***</u>
-
+-->
 
 ## Training
 
