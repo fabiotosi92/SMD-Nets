@@ -5,6 +5,8 @@
 
 This repository contains a Pytorch implementation of "SMD-Nets: Stereo Mixture Density Networks" (CVPR 2021) by [Fabio Tosi](https://vision.disi.unibo.it/~ftosi/), [Yiyi Liao](https://www.is.mpg.de/person/yliao), [Carolin Schmitt](https://avg.is.tuebingen.mpg.de/person/cschmitt) and [Andreas Geiger](http://www.cvlibs.net/)
 
+**News!** SMD-Nets was featured on the [CVPR Daily](https://www.rsipvision.com/CVPR2021-Wednesday/6/) and [BEST OF CVPR of Computer Vision News](https://www.rsipvision.com/ComputerVisionNews-2021July/30/)! 
+
 **Contributions:** 
 
 * A novel learning framework for stereo matching that exploits compactly parameterized bimodal mixture densities as output representation and can be trained using a simple likelihood-based loss function. Our simple formulation lets us avoid bleeding artifacts at depth discontinuities and provides a measure for aleatoric uncertainty.
@@ -15,7 +17,8 @@ This repository contains a Pytorch implementation of "SMD-Nets: Stereo Mixture D
 
 For more details, please check:
 
-[[Paper]](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   [[Supplementary]](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)  [[Poster]](http://www.cvlibs.net/publications/Tosi2021CVPR_poster.pdf) [[Video]](https://www.youtube.com/watch?v=tvVGuUSe2n8&t=148s)   [[Blog]](https://autonomousvision.github.io/smdnets/)   
+[[Paper]](http://www.cvlibs.net/publications/Tosi2021CVPR.pdf)   [[Supplementary]](http://www.cvlibs.net/publications/Tosi2021CVPR_supplementary.pdf)  [[Poster]](http://www.cvlibs.net/publications/Tosi2021CVPR_poster.pdf) [[Video]](https://www.youtube.com/watch?v=tvVGuUSe2n8&t=148s)   [[Blog]](https://autonomousvision.github.io/smdnets/)  [[Best of CVPR]]( https://www.rsipvision.com/ComputerVisionNews-2021July/30/)
+
 
 If you find this code useful in your research, please cite:
 
