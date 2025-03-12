@@ -2,6 +2,7 @@
 
 ![Alt text](./images/architecture2-1.jpg "architecture")
 
+**NEWS!** Quarter resolution (960×540) version of the UnrealStereo4K dataset is now available on [Hugging Face](https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K)! Check below for more details.
 
 This repository contains a Pytorch implementation of "SMD-Nets: Stereo Mixture Density Networks" (CVPR 2021) by [Fabio Tosi](https://vision.disi.unibo.it/~ftosi/), [Yiyi Liao](https://www.is.mpg.de/person/yliao), [Carolin Schmitt](https://avg.is.tuebingen.mpg.de/person/cschmitt) and [Andreas Geiger](http://www.cvlibs.net/)
 
@@ -56,8 +57,23 @@ You can automatically download the entire synthetic binocular stereo dataset usi
 [UnrealStereo4K_00007.zip [76 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00007.zip)<br>
 [UnrealStereo4K_00008.zip [16 GB]](https://s3.eu-central-1.amazonaws.com/avg-projects/smd_nets/UnrealStereo4K_00008.zip) - It contains 200 stereo pairs only, used as out-of-domain test set
 
+### UnrealStereo4K-Q (Quarter Resolution)
 
-**Warning!**: All the RGB images are PNG files at 8 MPx. This notably slows down the training process due to the expensive dataloading operation. Thus, we suggest compressing the images to raw binary files to speed up the process and trainings (<u>Pay attention to edit the filenames accordingly</u>). You can use the following code to convert (**offline**) the stereo images (Image0 and Image1 folders) to a ```raw``` format:
+We now provide a quarter-resolution version of the dataset (960×540) to support applications that do not require the full 4K resolution. This version contains the same scenes but with reduced file sizes, making it more accessible for experimentation and development.
+
+The quarter-resolution dataset is available on Hugging Face:
+[https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K](https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K)
+
+Key features of UnrealStereo4K-Q:
+- Image resolution: 960×540 (1/4 of the original)
+- High-quality JPG images instead of PNG
+- NPY format disparity maps (scaled appropriately for the resolution)
+- Same 9 scenes as the original dataset
+
+This version maintains the core structure of the original dataset but with a focus on reduced storage requirements and faster loading times, making it ideal for prototyping and initial experiments.
+
+
+**Warning!**: All the RGB images in the original dataset are PNG files at 8 MPx. This notably slows down the training process due to the expensive dataloading operation. Thus, we suggest compressing the images to raw binary files to speed up the process and trainings (<u>Pay attention to edit the filenames accordingly</u>). You can use the following code to convert (**offline**) the stereo images (Image0 and Image1 folders) to a ```raw``` format:
 
 ```shell
 img_path=/path/to/the/image
@@ -188,4 +204,3 @@ We thank the authors that shared the code of their works. In particular:
 * Gengshan Yang for providing the code of [HSMNet](https://github.com/gengshan-y/high-res-stereo).
 * Clement Godard for providing the code of [Monodepth](https://github.com/mrharicot/monodepth) (extended to Stereodepth).
 * Shunsuke Saito for providing the code of [PIFu](https://github.com/shunsukesaito/PIFu)
-
